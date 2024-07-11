@@ -24,18 +24,18 @@ class Catalogo:
             user = "francoluvi",
             password ="#4#.$N2ia_ZQf3Lq",
             # port = "3306",
-            # database = "indumentaria"
+            database = "indumentaria"
         )
 
         self.cursor = self.conn.cursor()
         # Intentamos seleccionar la base de datos
         try:
-            self.cursor.execute(f"USE {database}")
+            self.cursor.execute(f"USE {indumentaria}")
         except mysql.connector.Error as err:
             # Si la base de datos no existe, la creamos
             if err.errno == mysql.connector.errorcode.ER_BAD_DB_ERROR:
-                self.cursor.execute(f"CREATE DATABASE {database}")
-                self.conn.database = indumentaria
+                self.cursor.execute(f"CREATE DATABASE {indumentaria}")
+                self.conn.database = database
             else:
                 raise err
         
