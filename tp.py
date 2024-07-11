@@ -1,5 +1,5 @@
 #--------------------------------------------------------------------
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 #--------------------------------------------------------------------
 import mysql.connector
@@ -23,8 +23,7 @@ class Catalogo:
             host = "francoluvi.mysql.pythonanywhere-services.com",
             user = "francoluvi",
             password ="4#a*ms?RAY#T7u@",
-            # port = "3306",
-            database = "indumentaria"
+            #database = "indumentaria"
         )
 
         self.cursor = self.conn.cursor()
@@ -57,7 +56,7 @@ class Catalogo:
     #----------------------------------------------------------------
     def agregar_producto(self, descripcion, cantidad, precio, imagen):
         
-        sql = "INSERT INTO productos (descripcion, cantidad, precio, imagen_url) VALUES (%s, %s, %s, %s, %s)"
+        sql = "INSERT INTO productos (descripcion, cantidad, precio, imagen_url) VALUES (%s, %s, %s, %s)"
         valores = (descripcion, cantidad, precio, imagen)        
         
         self.conector.execute(sql, valores)
