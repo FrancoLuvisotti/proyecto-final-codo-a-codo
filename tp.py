@@ -23,7 +23,7 @@ class Catalogo:
             host = "francoluvi.mysql.pythonanywhere-services.com",
             user = "francoluvi",
             password ="123456789",
-            database = "inventario"
+            database = "francoluvi$inventario"
         )
 
         self.cursor = self.conn.cursor()
