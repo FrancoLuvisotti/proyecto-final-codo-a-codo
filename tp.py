@@ -23,18 +23,18 @@ class Catalogo:
             host = "francoluvi.mysql.pythonanywhere-services.com",
             user = "francoluvi",
             password ="123456789",
-            #database = "inventario"
+            database = "inventario"
         )
 
         self.cursor = self.conn.cursor()
         # Intentamos seleccionar la base de datos
         try:
-            self.cursor.execute(f"USE {inventario}")
+            self.cursor.execute(f"USE {database}")
         except mysql.connector.Error as err:
             # Si la base de datos no existe, la creamos
             if err.errno == mysql.connector.errorcode.ER_BAD_DB_ERROR:
-                self.cursor.execute(f"CREATE DATABASE {inventario}")
-                self.conn.database = inventario
+                self.cursor.execute(f"CREATE DATABASE {database}")
+                self.conn.database = database
             else:
                 raise err
         
@@ -193,7 +193,7 @@ def modificar_producto(codigo):
     else: 
         producto = catalogo.consultar_producto(codigo) 
         if producto: nombre_imagen = producto["imagen_url"] 
-    if catalogo.modificar_producto(codigo, nueva_descripcion, nueva_cantidad, nuevo_precio, nombre_imagen, nuevo_proveedor):
+    if catalogo.modificar_producto(codigo, nueva_descripcion, nueva_cantidad, nuevo_precio, nombre_imagen):
         return jsonify({"mensaje": "Producto modificado"}), 200 
     else:
         return jsonify({"mensaje": "Producto no encontrado"}), 403
@@ -220,5 +220,3 @@ def eliminar_producto(codigo):
 #--------------------------------------------------------------------
 if __name__ == "__main__":
     app.run(debug=True)
-
-
