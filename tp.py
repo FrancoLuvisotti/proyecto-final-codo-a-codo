@@ -35,7 +35,7 @@ class Catalogo:
             # Si la base de datos no existe, la creamos
             if err.errno == mysql.connector.errorcode.ER_BAD_DB_ERROR:
                 self.cursor.execute(f"CREATE DATABASE {indumentaria}")
-                self.conn.database = database
+                self.conn.database = indumentaria
             else:
                 raise err
         
