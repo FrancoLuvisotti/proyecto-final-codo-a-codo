@@ -22,7 +22,7 @@ class Catalogo:
         self.conn = mysql.connector.connect(
             host = "francoluvi.mysql.pythonanywhere-services.com",
             user = "francoluvi",
-            password ="4#a*ms?RAY#T7u@",
+            password ="4#.$N2ia_ZQf3Lq",
             #database = "indumentaria"
         )
 
@@ -109,7 +109,7 @@ class Catalogo:
 # Cuerpo del programa
 #--------------------------------------------------------------------
 # Crear una instancia de la clase Catalogo
-catalogo = Catalogo(host='francoluvi.mysql.pythonanywhere-services.com', user='francoluvi', password='4#a*ms?RAY#T7u@', database='francoluvi$indumentaria') # 4#.$N2ia_ZQf3Lq o 4#a*ms?RAY#T7u@
+catalogo = Catalogo(host='francoluvi.mysql.pythonanywhere-services.com', user='francoluvi', password='4#a*ms?RAY#T7u@', database='francoluvi$indumentaria')
 
 # Carpeta para guardar las imagenes.
 RUTA_DESTINO = '/home/francoluvi/static/imagenes'
