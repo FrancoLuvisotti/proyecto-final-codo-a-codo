@@ -22,19 +22,19 @@ class Catalogo:
         self.conn = mysql.connector.connect(
             host = "francoluvi.mysql.pythonanywhere-services.com",
             user = "francoluvi",
-            password ="4#.$N2ia_ZQf3Lq",
-            #database = "indumentaria"
+            password ="123456789",
+            #database = "inventario"
         )
 
         self.cursor = self.conn.cursor()
         # Intentamos seleccionar la base de datos
         try:
-            self.cursor.execute(f"USE {indumentaria}")
+            self.cursor.execute(f"USE {inventario}")
         except mysql.connector.Error as err:
             # Si la base de datos no existe, la creamos
             if err.errno == mysql.connector.errorcode.ER_BAD_DB_ERROR:
-                self.cursor.execute(f"CREATE DATABASE {indumentaria}")
-                self.conn.database = indumentaria
+                self.cursor.execute(f"CREATE DATABASE {inventario}")
+                self.conn.database = inventario
             else:
                 raise err
         
@@ -109,7 +109,7 @@ class Catalogo:
 # Cuerpo del programa
 #--------------------------------------------------------------------
 # Crear una instancia de la clase Catalogo
-catalogo = Catalogo(host='francoluvi.mysql.pythonanywhere-services.com', user='francoluvi', password='4#a*ms?RAY#T7u@', database='francoluvi$indumentaria')
+catalogo = Catalogo(host='francoluvi.mysql.pythonanywhere-services.com', user='francoluvi', password='123456789', database='francoluvi$inventario')
 
 # Carpeta para guardar las imagenes.
 RUTA_DESTINO = '/home/francoluvi/static/imagenes'
