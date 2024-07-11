@@ -20,8 +20,8 @@ class Catalogo:
         #Inicializa una instancia de Catalogo y crea una conexión a la base de datos.
 
         self.conn = mysql.connector.connect(
-            host = "localhost",
-            user = "root",
+            host = "francoluvi.mysql.pythonanywhere-services.com",
+            user = "francoluvi",
             password ="",
             # port = "3306",
             # database = "indumentaria"
@@ -110,7 +110,7 @@ class Catalogo:
 # Cuerpo del programa
 #--------------------------------------------------------------------
 # Crear una instancia de la clase Catalogo
-catalogo = Catalogo(host='USUARIO.francoluvi.mysql.pythonanywhere-services.com', user='Username:francoluvi', password='', database='indumentaria') #4#.$N2ia_ZQf3Lq
+catalogo = Catalogo(host='francoluvi.mysql.pythonanywhere-services.com', user='francoluvi', password='', database='indumentaria') #4#.$N2ia_ZQf3Lq
 #catalogo = Catalogo(host='USUARIO.mysql.pythonanywhere-services.com',
 #user='USUARIO', password='CLAVE', database='USUARIO$miapp')
 # Carpeta para guardar las imagenes.
