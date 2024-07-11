@@ -20,10 +20,9 @@ class Catalogo:
         #Inicializa una instancia de Catalogo y crea una conexión a la base de datos.
 
         self.conn = mysql.connector.connect(
-            host = "francoluvi.mysql.pythonanywhere-services.com",
-            user = "francoluvi",
-            password ="123456789",
-            database = "francoluvi$inventario"
+            host = host,
+            user = user,
+            password ="password"
         )
 
         self.cursor = self.conn.cursor()
