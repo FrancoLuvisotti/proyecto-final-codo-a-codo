@@ -1,4 +1,4 @@
-const URL = "http://127.0.0.1:5000/" 
+const URL = "https://francoluvi.pythonanywhere.com/"
 // Obtiene el contenido del inventario
 function obtenerProductos() { 
     fetch(URL + 'productos') 

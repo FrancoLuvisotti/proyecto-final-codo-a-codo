@@ -1,4 +1,4 @@
-const URL = "https://USUARIO.pythonanywhere.com/"
+const URL = "https://francoluvi.pythonanywhere.com/"
 
 document.getElementById('formulario').addEventListener('submit', function (event) {
     event.preventDefault(); // Evitamos que se envie el form

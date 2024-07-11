@@ -1,4 +1,4 @@
-const URL = "https://USUARIO.pythonanywhere.com/"
+const URL = "https://francoluvi.pythonanywhere.com/"
 // Obtiene el contenido del inventario
 function obtenerProductos() {
     fetch(URL + 'productos') // Realiza una solicitud GET al servidor y obtener la lista de productos.
