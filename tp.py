@@ -58,7 +58,7 @@ class Catalogo:
     def agregar_producto(self, descripcion, cantidad, precio, imagen):
         
         sql = "INSERT INTO productos (descripcion, cantidad, precio, imagen_url) VALUES (%s, %s, %s, %s, %s)"
-        valores = (descripcion, cantidad, precio, imagen, proveedor)        
+        valores = (descripcion, cantidad, precio, imagen)        
         
         self.conector.execute(sql, valores)
         self.conn.commit()
@@ -72,8 +72,8 @@ class Catalogo:
     #----------------------------------------------------------------
     def modificar_producto(self, codigo, nueva_descripcion, nueva_cantidad, nuevo_precio, nueva_imagen):
 
-        sql = "UPDATE productos SET descripcion = %s, cantidad = %s, precio = %s, imagen_url = %s, proveedor = %s WHERE codigo = %s"
-        valores = (nueva_descripcion, nueva_cantidad, nuevo_precio, nueva_imagen, nuevo_proveedor, codigo)
+        sql = "UPDATE productos SET descripcion = %s, cantidad = %s, precio = %s, imagen_url = %s WHERE codigo = %s"
+        valores = (nueva_descripcion, nueva_cantidad, nuevo_precio, nueva_imagen, codigo)
 
         self.cursor.execute(sql, valores)
         self.conn.commit()
