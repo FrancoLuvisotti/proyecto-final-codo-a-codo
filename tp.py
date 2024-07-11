@@ -110,7 +110,7 @@ class Catalogo:
 # Cuerpo del programa
 #--------------------------------------------------------------------
 # Crear una instancia de la clase Catalogo
-catalogo = Catalogo(host='USUARIO.francoluvi.mysql.pythonanywhere-services.com', user='Username:francoluvi', password='4#.$N2ia_ZQf3Lq', database='indumentaria')
+catalogo = Catalogo(host='USUARIO.francoluvi.mysql.pythonanywhere-services.com', user='Username:francoluvi', password='', database='indumentaria') #4#.$N2ia_ZQf3Lq
 #catalogo = Catalogo(host='USUARIO.mysql.pythonanywhere-services.com',
 #user='USUARIO', password='CLAVE', database='USUARIO$miapp')
 # Carpeta para guardar las imagenes.
@@ -167,7 +167,8 @@ def agregar_producto():
     #Separa el nombre del archivo de su extensión. 
     nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}" 
     #Genera un nuevo nombre para la imagen usando un timestamp, para evitar sobreescrituras y conflictos de nombres.
-    nuevo_codigo = catalogo.agregar_producto(descripcion, cantidad, precio, nombre_imagen, proveedor) 
+    nuevo_codigo = catalogo.agregar_producto(descripcion, cantidad, precio, nombre_imagen) 
+
     if nuevo_codigo: 
         imagen.save(os.path.join(RUTA_DESTINO, nombre_imagen))
 
@@ -176,6 +177,7 @@ def agregar_producto():
     else: 
         #Si el producto no se puede agregar, se devuelve una respuesta JSON con un mensaje de error y un código de estado HTTP 500 (Internal Server Error).
         return jsonify({"mensaje": "Error al agregar el producto."}), 500
+        
 #-------------------------------------------------------------------- 
 # Modificar un producto según su código 
 #--------------------------------------------------------------------
