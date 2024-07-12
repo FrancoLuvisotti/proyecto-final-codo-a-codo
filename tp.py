@@ -111,7 +111,7 @@ class Catalogo:
 catalogo = Catalogo(host='francoluvi.mysql.pythonanywhere-services.com', user='francoluvi', password='123456789', database='francoluvi$inventario')
 
 # Carpeta para guardar las imagenes.
-RUTA_DESTINO = '/home/francoluvi/static/imagenes'
+RUTA_DESTINO = '/home/francoluvi/static/imagenes/'
 
 #--------------------------------------------------------------------
 # Listar todos los productos
